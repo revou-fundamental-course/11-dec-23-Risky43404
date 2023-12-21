@@ -1,13 +1,15 @@
 
-const firstNameInput = document.getElementById("first-name-input")
-const submitButton = document.getElementById("submit-button")
-console. log("sudah masuk JSNya")
-submitButton.addEventListener("click", function(event) {
-    event.preventDefault()
-    var firstName = firstNameInput.value
-    if (firstName =="") {
-        alert=("tidak boleh kosong")
-    } else {
-        alert("sukses")
+function validateform() {
+    const name = document.form["message-form"]["full-name"].value;
+    const birthdate = document.form["message-form"]["birth-date"].value;
+    const gender = document.form["message-form"]["gender"].value;
+    const messages = document.form["message-form"]["messages"].value;
+
+    if (name == "" || birthdate == "" || gender == "" || messages == "" ) {
+        alert("tidak boleh ada yang kosong");
+        return false;
     }
-} )
+    setSenderUI(name, birthdate, gender, messages);
+
+    return false
+}

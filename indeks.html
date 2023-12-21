@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My School</title>
+    <style>
+        body {background-color: aqua;}
+    </style>
     <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
     <nav>
         <img src="assets/logo.jpg" alt="logo" class="logo">
         <ul class="nav-items">
-            <li>Home</li>
-            <li>Our Profile</li>
-            <li>Achievment</li>
-            <li>Message Us</li>
+            <li><button>Home</button></li>
+            <li><button>Our Profile</button></li>
+            <li><button>Achievment</button></li>
+            <li><button>Message Us</button></li>
         </ul>
 
     </nav>
+    <hr>
     <header>
-        <h1>Hai Risky, Welcome to Our Website</h1>
+        <h1>Hai <span id="name"> Risky</span>, Welcome to Our Website</h1>
         <h4>Pleace Enjoy</h4>
-        <img src="assets/header 1.jpg">
-        <hr>
+            <img src="assets/header 1.jpg">
     </header>
     <div class="fasilitions">
         <div>
@@ -38,12 +41,26 @@
         </div>
     </div>
     <hr>
-    <div class="input-section">
-        <label for="first-name-input">
-            first name
-        </label>
-        <input type="text" id="first-name-input">
-        <input type="submit" id="submit-button">submit </input>
+    <div>
+    <form name="message-form" onsubmit="return validateForm()">
+        Nama: <input placeholder="Nama" type="text" name="full-name"/>
+        <br />
+
+        Tanggal Lahir:
+        <input type="date" name="birth-date"/>
+        <br />
+        Jenis Kelamin:
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">Laki-laki</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Perempuan</label>
+        <br/>
+
+        Pesan:
+        <textarea placeholder="pesan" name="message"></textarea>
+        <br />
+        <input type="submit" value="submit"/>
+    </form>
     </div>
     <script src="JS/script.js"></script>
 </body>
